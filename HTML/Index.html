@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Valley Nursery Gallery</title>
+    <style>
+        :root {
+            --forest: #1f4f3f;
+            --leaf: #2f7d32;
+            --sage: #f3f8f2;
+            --sun: #f4c253;
+            --text: #1f2a24;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background: var(--sage);
+            line-height: 1.5;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .site-header {
+            background: linear-gradient(120deg, #e9f5e3, #fff6df);
+            border-bottom: 3px solid var(--leaf);
+        }
+
+        .top-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand img {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--leaf);
+        }
+
+        .brand-name {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .brand-tagline {
+            margin: 0;
+            color: #3f5d4e;
+            font-size: 0.85rem;
+        }
+
+        .page-title {
+            margin: 0;
+            color: var(--forest);
+            font-size: clamp(1.35rem, 2vw, 2rem);
+            text-align: center;
+            flex: 1 1 260px;
+        }
+
+        .site-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: var(--forest);
+            border: 1px solid var(--forest);
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            display: block;
+            font-size: 0.92rem;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .site-nav a:hover,
+        .site-nav a:focus-visible {
+            background: var(--forest);
+            color: var(--white);
+        }
+
+        .hero {
+            padding: 1.25rem 0 1.75rem;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 780px;
+            color: #2d473b;
+            font-size: 1rem;
+        }
+
+        main {
+            padding: 2rem 0 2.5rem;
+        }
+
+        section {
+            margin-bottom: 1.75rem;
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.25rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--forest);
+        }
+
+        .highlight-grid,
+        .promo-grid,
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 0.9rem;
+        }
+
+        .card {
+            border: 1px solid #d5e7d4;
+            border-radius: 10px;
+            padding: 0.9rem;
+            background: #f9fcf7;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 0.45rem;
+            color: #2b5c47;
+            font-size: 1rem;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .promo {
+            border-left: 5px solid var(--sun);
+            background: #fff9ec;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .gallery-grid figure {
+            margin: 0;
+            border: 1px solid #dbe9d9;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fbfef9;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-grid figcaption {
+            padding: 0.55rem;
+            font-size: 0.9rem;
+            color: #345544;
+            text-align: center;
+        }
+
+        .perks-list {
+            margin: 0;
+            padding-left: 1.1rem;
+        }
+
+        .perks-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .site-footer {
+            background: #173d32;
+            color: #eff8f2;
+            padding-top: 1.5rem;
+            margin-top: 1.25rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .site-footer h2 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .newsletter-form label {
+            display: block;
+            margin-bottom: 0.45rem;
+            font-size: 0.92rem;
+        }
+
+        .newsletter-row {
+            display: flex;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-row input {
+            flex: 1 1 150px;
+            padding: 0.55rem;
+            border-radius: 7px;
+            border: 1px solid #c4d6cb;
+            font: inherit;
+        }
+
+        .newsletter-row button {
+            border: none;
+            background: var(--sun);
+            color: #2f2f2f;
+            font-weight: 700;
+            border-radius: 7px;
+            padding: 0.55rem 0.9rem;
+            cursor: pointer;
+        }
+
+        .social-links,
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .site-footer a {
+            color: #e3f2e8;
+            text-decoration: none;
+        }
+
+        .site-footer a:hover,
+        .site-footer a:focus-visible {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            margin: 1.4rem 0 0;
+            padding: 0.9rem 0 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.86rem;
+            text-align: center;
+        }
+
+        @media (max-width: 740px) {
+            .top-bar {
+                justify-content: center;
+            }
+
+            .page-title {
+                width: 100%;
+            }
+
+            .hero {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body id="home">
+    <header class="site-header">
+        <div class="container top-bar">
+            <a class="brand" href="#home">
+                <img src="images/Client1_AloePlant.png" alt="Bloom Valley Nursery logo">
+                <div>
+                    <p class="brand-name">Bloom Valley Nursery</p>
+                    <p class="brand-tagline">Grow beauty at home</p>
+                </div>
+            </a>
+
+            <h1 class="page-title">Bloom Valley Nursery Gallery</h1>
+
+            <nav class="site-nav" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#promos">Promos</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#perks">Perks</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container hero">
+            <p>Discover fresh houseplants, sturdy trees, and practical garden supplies in one place. This homepage showcases current favorites, limited-time shopping deals, and easy ways to shop by category.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="highlights" aria-labelledby="highlights-title">
+            <h2 id="highlights-title">Client Highlights</h2>
+            <div class="highlight-grid">
+                <article class="card">
+                    <h3>Seasonal Favorites</h3>
+                    <p>Top-rated plants this month include the Spider Plant, String of Pearls, and Japanese Maple.</p>
+                </article>
+                <article class="card">
+                    <h3>Trusted by Local Gardeners</h3>
+                    <p>Bloom Valley has helped community families and schools build healthier outdoor spaces for over 10 years.</p>
+                </article>
+                <article class="card">
+                    <h3>Fresh Weekly Arrivals</h3>
+                    <p>New nursery items are added every Friday so shoppers can always find something new for their home or yard.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="promos" aria-labelledby="promos-title">
+            <h2 id="promos-title">Shopping Promos</h2>
+            <div class="promo-grid">
+                <article class="card promo">
+                    <h3>Buy 2, Get 1 Free</h3>
+                    <p>Mix and match select indoor plants through Sunday.</p>
+                </article>
+                <article class="card promo">
+                    <h3>Tree Planting Bundle</h3>
+                    <p>Save 15% when you purchase any tree with potting soil and a watering can.</p>
+                </article>
+                <article class="card promo">
+                    <h3>Weekend Pickup Discount</h3>
+                    <p>Use code <strong>BLOOM10</strong> for 10% off orders picked up in store.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery" aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Product and Item Images</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="images/Client1_SpiderPlant.png" alt="Spider Plant in decorative pot">
+                    <figcaption>Spider Plant</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Client1_StringofPearls.png" alt="String of Pearls hanging plant">
+                    <figcaption>String of Pearls</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Client1_AppleTree.png" alt="Young apple tree ready for planting">
+                    <figcaption>Apple Tree</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Client1_MapleTree.png" alt="Maple tree nursery stock">
+                    <figcaption>Maple Tree</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Client1_PottingSoil.png" alt="Potting soil bag for container plants">
+                    <figcaption>Potting Soil</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Client1_WateringCan.png" alt="Green watering can for plant care">
+                    <figcaption>Watering Can</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="perks" aria-labelledby="perks-title">
+            <h2 id="perks-title">Shopping Perks</h2>
+            <ul class="perks-list">
+                <li>Free local pickup for orders over $35.</li>
+                <li>Loyalty rewards: earn points on every purchase.</li>
+                <li>Friendly plant care guidance from nursery staff.</li>
+                <li>Gift wrapping available for plant bundles and decor sets.</li>
+            </ul>
+        </section>
+
+        <section id="categories" aria-labelledby="categories-title">
+            <h2 id="categories-title">Categories of Products</h2>
+            <div class="category-grid">
+                <article class="card">
+                    <h3>Indoor Plants</h3>
+                    <p>Low-maintenance and statement plants for apartments, offices, and homes.</p>
+                </article>
+                <article class="card">
+                    <h3>Trees and Shrubs</h3>
+                    <p>Fruit trees and ornamental picks for backyard landscaping.</p>
+                </article>
+                <article class="card">
+                    <h3>Garden Supplies</h3>
+                    <p>Soil, watering tools, and essentials that keep your plants thriving.</p>
+                </article>
+                <article class="card">
+                    <h3>Outdoor Decor</h3>
+                    <p>Birdhouses, planters, and accents that add character to your garden.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <section aria-labelledby="newsletter-title">
+                <h2 id="newsletter-title">Subscribe to our Newsletter</h2>
+                <form class="newsletter-form" action="#" method="post">
+                    <label for="newsletter-email">Email Address</label>
+                    <div class="newsletter-row">
+                        <input id="newsletter-email" name="newsletter-email" type="email" placeholder="name@example.com" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </section>
+
+            <section aria-labelledby="social-title">
+                <h2 id="social-title">Social Media</h2>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+                    <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="footer-nav-title">
+                <h2 id="footer-nav-title">More Webpages</h2>
+                <ul class="footer-links">
+                    <li><a href="Plant-Care.html">Plant Care Tips</a></li>
+                    <li><a href="Gallery-Guide.html">Gallery Guide</a></li>
+                    <li><a href="Visit-Us.html">Visit Us</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <p class="container footer-note">Copyright 2026 Bloom Valley Nursery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
