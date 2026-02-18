@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Bloom Valley Nursery Logo</title>
+  <desc id="desc">Circular plant icon in canopy green palette.</desc>
+  <rect width="120" height="120" rx="60" fill="#014038"/>
+  <circle cx="60" cy="60" r="49" fill="none" stroke="#96BAA0" stroke-width="4"/>
+  <path d="M27 82 C40 92, 58 95, 80 92" fill="none" stroke="#F0C06D" stroke-width="4" stroke-linecap="round"/>
+  <path d="M51 80 C45 61, 55 41, 72 32 C74 49, 67 66, 51 80 Z" fill="none" stroke="#BDD4DA" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M38 70 C32 56, 35 43, 47 34 C49 47, 45 60, 38 70 Z" fill="none" stroke="#F7F7F7" stroke-width="4" stroke-linejoin="round"/>
+</svg>
