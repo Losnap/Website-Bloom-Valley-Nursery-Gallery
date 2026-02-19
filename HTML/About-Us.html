@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Valley Nursery | About Us</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container top-bar">
+            <a class="brand" href="Index.html">
+                <img src="images/bloom-logo-canopy.svg" alt="Bloom Valley Nursery logo">
+                <div class="brand-text">
+                    <p class="brand-name">Bloom Valley Nursery</p>
+                    <p class="brand-tagline">Sustainable growth, local roots</p>
+                </div>
+            </a>
+
+            <h1 class="page-title">About Us</h1>
+
+            <nav class="site-nav" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a class="active" href="About-Us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container hero">
+            <p>Learn more about Bloom Valley Nursery and share your feedback or custom order request.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="panel" aria-labelledby="about-client-title">
+            <h2 id="about-client-title">About Bloom Valley Nursery</h2>
+            <p>Bloom Valley Nursery operates as a local, family-owned plant nursery in the area, specializing in the sale of a wide variety of plants, trees, and gardening supplies. It aims to connect with gardening enthusiasts and homeowners in the community who share a passion for horticulture.</p>
+            <p>The nursery focuses on sustainability and creativity in daily operations, with the goal of building stronger community engagement while making it easier for customers to submit inquiries and place orders.</p>
+
+            <h3>Business Hours</h3>
+            <ul class="hours-list">
+                <li>Monday-Friday: 9 a.m. to 6 p.m.</li>
+                <li>Saturday-Sunday: 10 a.m. to 5 p.m.</li>
+            </ul>
+        </section>
+
+        <section class="panel" aria-labelledby="feedback-form-title">
+            <h2 id="feedback-form-title">Client Feedback and Custom Orders</h2>
+            <form class="feedback-form" action="#" method="post">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="full-name">Full Name</label>
+                        <input id="full-name" name="full-name" type="text" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="request-type">Request Type</label>
+                        <select id="request-type" name="request-type" required>
+                            <option value="">Select one</option>
+                            <option value="feedback">Client Feedback</option>
+                            <option value="custom-order">Custom Order Request</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="item-interest">Plant or Product of Interest</label>
+                        <input id="item-interest" name="item-interest" type="text" placeholder="Example: Maple tree, indoor plant bundle, bulk potting soil">
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Share your feedback or describe your custom order request."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Send Request</button>
+                    <button type="reset" class="btn-outline">Clear Form</button>
+                </div>
+                <p class="form-note">A team member will follow up during business hours.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <section aria-labelledby="newsletter-title">
+                <h2 id="newsletter-title">Subscribe to Newsletter</h2>
+                <form action="#" method="post">
+                    <label for="newsletter-email">Email Address</label>
+                    <div class="newsletter-row">
+                        <input id="newsletter-email" name="newsletter-email" type="email" required placeholder="name@example.com">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </section>
+
+            <section aria-labelledby="social-title">
+                <h2 id="social-title">Social Media</h2>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="footer-nav-title">
+                <h2 id="footer-nav-title">Website Pages</h2>
+                <ul class="footer-links">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <p class="container footer-note">Copyright 2026 Bloom Valley Nursery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
