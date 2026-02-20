@@ -1,8 +1,8 @@
 # Bloom Valley Nursery Website
 
 ## Files
-- `HTML/css/styles.css`: Shared styles for all pages.
-- `HTML/js/site-alerts.js`: Shared JavaScript alert handlers.
+- `CSS/styles.css`: Shared styles for all pages.
+- `JS/site-alerts.js`: Shared JavaScript alert handlers.
 - `HTML/Index.html`: Home page.
 - `HTML/Gallery.html`: Gallery page.
 - `HTML/About-Us.html`: About Us / contact page.
@@ -22,7 +22,7 @@
 
 ## Compliance Checklist
 - Front-end expertise:
-  - Shared responsive layout and style system in `HTML/css/styles.css`.
+  - Shared responsive layout and style system in `CSS/styles.css`.
   - Mobile-friendly grids, flexible navigation, and responsive cart modal.
 - Data storage and security:
   - Shopping cart uses `sessionStorage` key `bloomValleySessionCart`.
@@ -34,3 +34,4 @@
   - Keyboard focus styles and skip link on each page.
   - Dialog accessibility for cart modal (`role="dialog"`, close on `Esc`, focus trap).
   - Live regions and accessible labels for cart/status updates.
+
