@@ -1,6 +1,0 @@
-# Force text files to use LF in the repo
-* text=auto eol=lf
-
-# Optional: ensure Windows scripts stay CRLF if you use them
-*.bat text eol=crlf
-*.cmd text eol=crlf
