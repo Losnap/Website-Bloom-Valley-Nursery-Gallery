@@ -22,7 +22,7 @@
             <nav class="site-nav" aria-label="Primary Navigation">
                 <ul>
                     <li><a href="Index.html">Home</a></li>
-                    <li><a class="active" href="Gallery.html">Gallery</a></li>
+                    <li><a class="active" href="Gallery.html">Gallery <span class="cart-badge js-cart-count" aria-label="Items in cart">0</span></a></li>
                     <li><a href="About-Us.html">About Us</a></li>
                     <li><a href="Customer-Engage.html">Customer Engage</a></li>
                 </ul>
@@ -38,7 +38,8 @@
         <section class="panel" id="catalog" aria-labelledby="catalog-title">
             <h2 id="catalog-title">Bloom Valley Catalog</h2>
             <div class="cart-toolbar">
-                <a class="btn" href="#cart-info">View Shopping Cart</a>
+                <button type="button" class="btn js-view-cart">View Shopping Cart</button>
+                <p id="cart-status" class="small-text cart-status" aria-live="polite">Cart is empty.</p>
             </div>
 
             <div class="table-wrap">
@@ -102,14 +103,28 @@
 
         <section class="panel" id="cart-info" aria-labelledby="cart-info-title">
             <h2 id="cart-info-title">Shopping Cart</h2>
-            <p>Your cart preview area will be connected in the next build step.</p>
-            <p class="small-text">This page currently provides the required catalog and action buttons layout.</p>
+            <p class="small-text">Use the <strong>View Shopping Cart</strong> button to open the cart modal and review items saved in this browser session.</p>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title" hidden>
+        <div class="cart-modal-dialog">
+            <div class="cart-modal-header">
+                <h2 id="cart-modal-title">Shopping Cart</h2>
+                <button type="button" class="btn-outline js-close-cart">Close</button>
+            </div>
+
+            <div id="cart-modal-content" class="cart-modal-content">
+                <p>Your cart is empty.</p>
+            </div>
+
+            <p id="cart-modal-total" class="cart-total">Total: $0.00</p>
             <div class="form-actions">
                 <button type="button" class="btn-outline js-clear-cart">Clear Cart</button>
                 <button type="button" class="js-process-order">Process Order</button>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="container footer-grid">
@@ -149,7 +164,5 @@
     <script src="js/site-alerts.js"></script>
 </body>
 </html>
-
-
 
 

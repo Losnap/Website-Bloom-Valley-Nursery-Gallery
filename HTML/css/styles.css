@@ -159,6 +159,26 @@ a {
     color: var(--white);
 }
 
+.cart-badge {
+    display: inline-grid;
+    place-items: center;
+    margin-left: 0.35rem;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.35rem;
+    border-radius: 999px;
+    background: var(--sunlit-petal);
+    color: var(--font-green);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.cart-badge.is-empty {
+    opacity: 0.68;
+}
+
 .hero {
     padding: 0.35rem 0 1.4rem;
 }
@@ -341,6 +361,9 @@ button:focus-visible {
 .cart-toolbar {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
     margin-bottom: 0.85rem;
 }
 
@@ -378,6 +401,75 @@ button:focus-visible {
 
 .price {
     white-space: nowrap;
+    font-weight: 700;
+    color: var(--canopy-green);
+}
+
+.cart-status {
+    margin: 0;
+    color: #1f4d43;
+}
+
+.cart-modal[hidden] {
+    display: none;
+}
+
+.cart-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 35, 28, 0.5);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.cart-modal-dialog {
+    width: min(900px, 96%);
+    max-height: 90vh;
+    overflow: auto;
+    background: var(--white);
+    border: 1px solid #cfe0d9;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 14px 40px rgba(0, 35, 28, 0.3);
+}
+
+.cart-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.cart-modal-header h2 {
+    margin: 0;
+}
+
+.cart-modal-content {
+    margin-bottom: 0.8rem;
+}
+
+.cart-modal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-modal-table th,
+.cart-modal-table td {
+    border: 1px solid #cfdfd9;
+    padding: 0.6rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.cart-modal-table th {
+    background: #edf5f1;
+}
+
+.cart-total {
+    margin: 0 0 0.8rem;
     font-weight: 700;
     color: var(--canopy-green);
 }
