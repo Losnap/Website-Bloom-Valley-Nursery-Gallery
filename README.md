@@ -3,7 +3,7 @@
 ## Files
 - `CSS/styles.css`: Shared styles for all pages.
 - `JS/site-alerts.js`: Shared JavaScript alert handlers.
-- `HTML/Index.html`: Home page.
+- `index.html`: Home page.
 - `HTML/Gallery.html`: Gallery page.
 - `HTML/About-Us.html`: About Us / contact page.
 - `HTML/Customer-Engage.html`: Customer Engage page.
