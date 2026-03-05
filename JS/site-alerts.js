@@ -14,10 +14,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupSubscribeAlerts() {
     const subscribeButtons = document.querySelectorAll(".js-subscribe-btn");
+    const handledForms = new Set();
+
     subscribeButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
+        const form = button.closest("form");
+        if (!form || handledForms.has(form)) {
+            return;
+        }
+
+        handledForms.add(form);
+        form.addEventListener("submit", (event) => {
             event.preventDefault();
+
+            const emailField = form.querySelector("input[type='email']");
+            if (emailField) {
+                emailField.value = emailField.value.trim();
+            }
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
             alert("Thank you for subscribing.");
+            form.reset();
         });
     });
 }
